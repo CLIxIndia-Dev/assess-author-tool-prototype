@@ -125,6 +125,7 @@ class ClixEditAssess extends Component {
                 <TextInput id='assessment-name'
                   name='assessment-name'
                   placeholder='Name your assessment'
+                  value='Assessment name 03'
                 />
               </FormField>
             </Form>
@@ -223,39 +224,39 @@ class ClixEditAssess extends Component {
                   Remove
                 </Box>
               </ListItem>
-                { QUESTIONS.map(question =>
-                  <ListItem
-                    separator='top'
-                    pad={{ horizontal: 'medium', vertical: 'small', between: 'large' }}
-                    colorIndex='light-1'
+              { QUESTIONS.map(question =>
+                <ListItem
+                  separator='top'
+                  pad={{ horizontal: 'medium', vertical: 'small', between: 'large' }}
+                  colorIndex='light-1'
+                >
+                  <Box textAlign='left'
+                    size={{ width: { min: 'medium', max: 'medium' } }}
                   >
-                    <Box textAlign='left'
-                      size={{ width: { min: 'medium', max: 'medium' } }}
-                    >
-                      {question.name}
-                    </Box>
-                    <Box textAlign='left'
-                      size={{ width: { min: 'small', max: 'medium' } }}
-                    >
-                      {question.type}
-                    </Box>
-                    <Box pad={{ horizontal: 'medium', vertical: 'none', between: 'none' }}
-                    >
-                      {question.editable ? <EditIcon colorIndex='brand' /> :
-                      <EditIcon colorIndex='unknown' />}
-                    </Box>
-                    <Box direction='row' pad={{ horizontal: 'small', vertical: 'none', between: 'small' }}
+                    {question.name}
+                  </Box>
+                  <Box textAlign='left'
+                    size={{ width: { min: 'small', max: 'medium' } }}
+                  >
+                    {question.type}
+                  </Box>
+                  <Box pad={{ horizontal: 'medium', vertical: 'none', between: 'none' }}
+                  >
+                    {question.editable ? <EditIcon colorIndex='brand' /> :
+                    <EditIcon colorIndex='unknown' />}
+                  </Box>
+                  <Box direction='row' pad={{ horizontal: 'small', vertical: 'none', between: 'small' }}
 
-                    >
-                      <LinkDownIcon colorIndex='brand' />
-                      <LinkUpIcon colorIndex='brand' />
-                    </Box>
-                    <Box pad={{ horizontal: 'medium', vertical: 'none', between: 'none' }}
-                    >
-                      <SubtractCircleIcon colorIndex='brand' />
-                    </Box>
-                  </ListItem>
-                  )}
+                  >
+                    <LinkDownIcon colorIndex='brand' />
+                    <LinkUpIcon colorIndex='brand' />
+                  </Box>
+                  <Box pad={{ horizontal: 'medium', vertical: 'none', between: 'none' }}
+                  >
+                    <SubtractCircleIcon colorIndex='brand' />
+                  </Box>
+                </ListItem>
+                )}
               <Button href='#'
                 accent={false}
                 plain={false}
