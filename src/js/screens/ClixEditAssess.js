@@ -57,31 +57,31 @@ import NavControl from '../components/NavControl';
 
 const QUESTIONS = [
   {
-    name: 'Item name', type: 'Multiple choice', editable: true
+    name: 'Question name', type: 'Multiple choice', editable: true
   },
   {
-    name: 'Item name', type: 'Short answer', editable: true
+    name: 'Question name', type: 'Short answer', editable: true
   },
   {
-    name: 'Item name', type: 'Numerical response', editable: false
+    name: 'Question name', type: 'Numerical response', editable: false
   },
   {
-    name: 'Item name', type: 'File upload', editable: true
+    name: 'Question name', type: 'File upload', editable: true
   },
   {
-    name: 'Item name', type: 'ART', editable: true
+    name: 'Question name', type: 'ART', editable: true
   },
   {
-    name: 'Item name', type: 'Image sequence', editable: false
+    name: 'Question name', type: 'Image sequence', editable: false
   },
   {
-    name: 'Item name', type: 'MW sandbox', editable: false
+    name: 'Question name', type: 'MW sandbox', editable: false
   },
   {
-    name: 'Item name', type: 'MW fill-in-the-blank', editable: false
+    name: 'Question name', type: 'MW fill-in-the-blank', editable: false
   },
   {
-    name: 'Item name', type: 'MW sentence', editable: false
+    name: 'Question name', type: 'MW sentence', editable: false
   }
 ];
 
@@ -200,13 +200,13 @@ class ClixEditAssess extends Component {
 
                   size={{ width: { min: 'medium', max: 'medium' } }}
                 >
-                  Item name
+                  Question name
                 </Box>
                 <Box textAlign='left'
 
                   size={{ width: { min: 'small', max: 'medium' } }}
                 >
-                  Item type
+                  Question type
                 </Box>
                 <Box pad={{ horizontal: 'medium', vertical: 'none', between: 'none' }}
 
