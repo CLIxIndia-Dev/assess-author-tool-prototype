@@ -56,45 +56,12 @@ import NavControl from '../components/NavControl';
 
 // import CLIxLogo from '../../clix-logo.png';
 
-const QUESTIONS = [
-  {
-    name: 'Item name', type: 'Multiple choice', editable: true
-  },
-  {
-    name: 'Item name', type: 'Short answer', editable: true
-  },
-  {
-    name: 'Item name', type: 'Numerical response', editable: false
-  },
-  {
-    name: 'Item name', type: 'File upload', editable: true
-  },
-  {
-    name: 'Item name', type: 'ART', editable: true
-  },
-  {
-    name: 'Item name', type: 'Image sequence', editable: false
-  },
-  {
-    name: 'Item name', type: 'MW sandbox', editable: false
-  },
-  {
-    name: 'Item name', type: 'MW fill-in-the-blank', editable: false
-  },
-  {
-    name: 'Item name', type: 'MW sentence', editable: false
-  }
-];
-
-class ClixAssess extends Component {
-
+class ClixNewAssess extends Component {
   render() {
-
-
     return (
       <Article full='horizontal'
         alignSelf='stretch'
-        flex='true'
+        flex={true}
       >
         <Header direction='row'
           justify='start'
@@ -116,13 +83,13 @@ class ClixAssess extends Component {
               Create Assessment
           </Heading>
           <Box direction='row'
-          justify='between'
-          align='center'
-          alignContent='between'
-          wrap={true}
-          pad={{ horizontal: 'medium', vertical: 'medium', between: 'small' }}
-          margin='none'
-          colorIndex='light-2'
+            justify='between'
+            align='center'
+            alignContent='between'
+            wrap={true}
+            pad={{ horizontal: 'medium', vertical: 'medium', between: 'small' }}
+            margin='none'
+            colorIndex='light-2'
           >
             <Form colorIndex='light-1'>
               <FormField label='Assessment name'>
@@ -146,21 +113,18 @@ class ClixAssess extends Component {
                 direction='row'
                 size='small'
                 pad={{ horizontal: 'none', between: 'small' }}
-
               >
-
-
                 <Button label='Preview assessment'
                   icon={<ViewIcon />}
-                  plain='true'
+                  plain={true}
                   onClick={() => alert('Preview screen')} />
                 <Button label='Embed code'
                   icon={<CodeIcon />}
-                  plain='true'
+                  plain={true}
                   onClick={() => alert('Embed code generated')} />
                 <Button label='Publish'
                   icon={<DeployIcon />}
-plain='true'
+                  plain={true}
                   onClick={() => alert('Assessment published')} />
               </Menu>
             </Box>
@@ -176,9 +140,9 @@ plain='true'
             <Heading tag='h4' margin='none'>
               Embed code
               <Box wrap={true}
-              pad={{ horizontal: 'medium', vertical: 'none', between: 'small' }}
-              margin='none'
-              colorIndex='light-1'
+                pad={{ horizontal: 'medium', vertical: 'none', between: 'small' }}
+                margin='none'
+                colorIndex='light-1'
               >
                 <Paragraph >
                 Embed code here
@@ -194,84 +158,82 @@ plain='true'
             >
             <List align='center'
               selectable={true}
-              onSelect={()=> console.log('selected')}
-              full='true'
+              full={true}
               size='full'
-              flex='true'
+              flex={true}
 
 
             >
-            <ListItem
-              separator='top'
-              pad={{ horizontal: 'medium', vertical: 'small', between: 'large' }}
-              colorIndex='light-2'
-              >
-              <Box textAlign='left'
+              <ListItem
+                separator='top'
+                pad={{ horizontal: 'medium', vertical: 'small', between: 'large' }}
+                colorIndex='light-2'
+                >
+                <Box textAlign='left'
 
-                size={{width: {min: 'medium', max: 'medium'}}}
-              >
-                Item name
-              </Box>
-              <Box textAlign='left'
+                  size={{ width: { min: 'medium', max: 'medium' } }}
+                >
+                  Item name
+                </Box>
+                <Box textAlign='left'
 
-                size={{width: {min: 'small', max: 'medium'}}}
-              >
-                Item type
-              </Box>
-              <Box pad={{ horizontal: 'medium', vertical: 'none', between: 'none' }}
+                  size={{ width: { min: 'small', max: 'medium' } }}
+                >
+                  Item type
+                </Box>
+                <Box pad={{ horizontal: 'medium', vertical: 'none', between: 'none' }}
 
-              >
-                Edit
-              </Box>
-              <Box pad={{ horizontal: 'small', vertical: 'none', between: 'none' }}
+                >
+                  Edit
+                </Box>
+                <Box pad={{ horizontal: 'small', vertical: 'none', between: 'none' }}
 
-              >
-                Reorder
-              </Box>
-              <Box pad={{ horizontal: 'none', vertical: 'none', between: 'none' }}
+                >
+                  Reorder
+                </Box>
+                <Box pad={{ horizontal: 'none', vertical: 'none', between: 'none' }}
 
-              >
-                Remove
-              </Box>
-            </ListItem>
-            <ListPlaceholder
-              emptyMessage='You do not have any items at the moment.'
-              unfilteredTotal={0}
-              filteredTotal={0}
-            />
+                >
+                  Remove
+                </Box>
+              </ListItem>
+              <ListPlaceholder
+                emptyMessage='You do not have any items at the moment.'
+                unfilteredTotal={0}
+                filteredTotal={0}
+              />
               <Button href='#'
                 accent={false}
                 plain={false}
                 path='/'
                 secondary={false}
                 primary={false}
-
               >
-
                 <Box direction='row'
                   pad={{ horizontal: 'small', vertical: 'small', between: 'small' }}
                   separator='all'
                   colorIndex='neutral-2-a'
                 >
-                  <AddIcon colorIndex='brand'/> <Label colorIndex='brand' margin='none'>Add new item</Label>
+                  <AddIcon colorIndex='brand' />
+                  <Label colorIndex='brand' margin='none'>Add new item</Label>
                 </Box>
               </Button>
             </List>
             <Menu responsive={true}
-                inline={true}
-                primary={false}
-                direction='row'
-                size='small'
-                pad={{ horizontal: 'none', between: 'small' }}
-                justify='end'
-              >
-                <Button label='Save assessment'
-                  path='/clixdash'
-                />
-                <Button label='Cancel'
-                  path='/clixdash'
-                />
-              </Menu>
+              inline={true}
+              primary={false}
+              direction='row'
+              size='small'
+              pad={{ horizontal: 'none', between: 'small' }}
+              justify='end'
+            >
+              <Button label='Save assessment'
+                path='/clixdash'
+              />
+              <Button label='Cancel'
+                path='/clixdash'
+              />
+            </Menu>
           </Box>
         </Section>
         <Footer direction='row'
@@ -283,7 +245,6 @@ plain='true'
           float={true}
           fixed={true}
         >
-
           <Anchor icon={<HomeIcon />}
             label='Home'
             animateIcon={true}
@@ -304,4 +265,4 @@ plain='true'
   }
 }
 
-export default ClixAssess;
+export default ClixNewAssess;

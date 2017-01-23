@@ -85,15 +85,12 @@ const QUESTIONS = [
   }
 ];
 
-class ClixAssess extends Component {
-
+class ClixEditAssess extends Component {
   render() {
-
-
     return (
       <Article full='horizontal'
         alignSelf='stretch'
-        flex='true'
+        flex={true}
       >
         <Header direction='row'
           justify='start'
@@ -102,7 +99,7 @@ class ClixAssess extends Component {
           pad={{ horizontal: 'medium', vertical: 'small', between: 'small' }}
           colorIndex='brand'
           >
-          <Logo/>
+          <Logo />
           <Heading tag='h2' strong={true} margin='none'>
             [CLIx logo]
           </Heading>
@@ -115,13 +112,13 @@ class ClixAssess extends Component {
               Edit Assessment
           </Heading>
           <Box direction='row'
-          justify='between'
-          align='center'
-          alignContent='between'
-          wrap={true}
-          pad={{ horizontal: 'medium', vertical: 'medium', between: 'small' }}
-          margin='none'
-          colorIndex='light-2'
+            justify='between'
+            align='center'
+            alignContent='between'
+            wrap={true}
+            pad={{ horizontal: 'medium', vertical: 'medium', between: 'small' }}
+            margin='none'
+            colorIndex='light-2'
           >
             <Form colorIndex='light-1'>
               <FormField label='Assessment name'>
@@ -133,7 +130,6 @@ class ClixAssess extends Component {
             </Form>
             <Box direction='column'
               pad={{ horizontal: 'none', vertical: 'none', between: 'small' }}
-
             >
               <Box alignSelf='end'><Paragraph
                 margin='none'>
@@ -145,21 +141,18 @@ class ClixAssess extends Component {
                 direction='row'
                 size='small'
                 pad={{ horizontal: 'none', between: 'small' }}
-
               >
-
-
                 <Button label='Preview assessment'
                   icon={<ViewIcon />}
-                  plain='true'
+                  plain={true}
                   onClick={() => alert('Preview screen')} />
                 <Button label='Embed code'
                   icon={<CodeIcon />}
-                  plain='true'
+                  plain={true}
                   onClick={() => alert('Embed code generated')} />
                 <Button label='Publish'
                   icon={<DeployIcon />}
-plain='true'
+                  plain={true}
                   onClick={() => alert('Assessment published')} />
               </Menu>
             </Box>
@@ -175,9 +168,9 @@ plain='true'
             <Heading tag='h4' margin='none'>
               Embed code
               <Box wrap={true}
-              pad={{ horizontal: 'medium', vertical: 'none', between: 'small' }}
-              margin='none'
-              colorIndex='light-1'
+                pad={{ horizontal: 'medium', vertical: 'none', between: 'small' }}
+                margin='none'
+                colorIndex='light-1'
               >
                 <Paragraph >
                 Embed code here
@@ -193,79 +186,76 @@ plain='true'
             >
             <List align='center'
               selectable={true}
-              onSelect={()=> console.log('selected')}
-              full='true'
+              full={true}
               size='full'
-              flex='true'
-
-
+              flex={true}
             >
-            <ListItem
-              separator='top'
-              pad={{ horizontal: 'medium', vertical: 'small', between: 'large' }}
-              colorIndex='light-2'
-              >
-              <Box textAlign='left'
-
-                size={{width: {min: 'medium', max: 'medium'}}}
-              >
-                Item name
-              </Box>
-              <Box textAlign='left'
-
-                size={{width: {min: 'small', max: 'medium'}}}
-              >
-                Item type
-              </Box>
-              <Box pad={{ horizontal: 'medium', vertical: 'none', between: 'none' }}
-
-              >
-                Edit
-              </Box>
-              <Box pad={{ horizontal: 'small', vertical: 'none', between: 'none' }}
-
-              >
-                Reorder
-              </Box>
-              <Box pad={{ horizontal: 'none', vertical: 'none', between: 'none' }}
-
-              >
-                Remove
-              </Box>
-            </ListItem>
-            { QUESTIONS.map(
-              (question) =>
               <ListItem
-              separator='top'
-              pad={{ horizontal: 'medium', vertical: 'small', between: 'large' }}
-              colorIndex='light-1'
-              >
-                <Box textAlign='left'
-                  size={{width: {min: 'medium', max: 'medium'}}}
+                separator='top'
+                pad={{ horizontal: 'medium', vertical: 'small', between: 'large' }}
+                colorIndex='light-2'
                 >
-                  {question.name}
+                <Box textAlign='left'
+
+                  size={{ width: { min: 'medium', max: 'medium' } }}
+                >
+                  Item name
                 </Box>
                 <Box textAlign='left'
-                  size={{width: {min: 'small', max: 'medium'}}}
+
+                  size={{ width: { min: 'small', max: 'medium' } }}
                 >
-                  {question.type}
+                  Item type
                 </Box>
                 <Box pad={{ horizontal: 'medium', vertical: 'none', between: 'none' }}
-                >
-                  { question.editable ? <EditIcon colorIndex='brand' /> : <EditIcon colorIndex='unknown'/>}
-                </Box>
-                <Box direction='row' pad={{ horizontal: 'small', vertical: 'none', between: 'small' }}
 
                 >
-                  <LinkDownIcon colorIndex='brand' />
-                  <LinkUpIcon colorIndex='brand' />
+                  Edit
                 </Box>
-                <Box pad={{ horizontal: 'medium', vertical: 'none', between: 'none' }}
+                <Box pad={{ horizontal: 'small', vertical: 'none', between: 'none' }}
+
                 >
-                  <SubtractCircleIcon colorIndex='brand' />
+                  Reorder
+                </Box>
+                <Box pad={{ horizontal: 'none', vertical: 'none', between: 'none' }}
+
+                >
+                  Remove
                 </Box>
               </ListItem>
-              )}
+                { QUESTIONS.map(question =>
+                  <ListItem
+                    separator='top'
+                    pad={{ horizontal: 'medium', vertical: 'small', between: 'large' }}
+                    colorIndex='light-1'
+                  >
+                    <Box textAlign='left'
+                      size={{ width: { min: 'medium', max: 'medium' } }}
+                    >
+                      {question.name}
+                    </Box>
+                    <Box textAlign='left'
+                      size={{ width: { min: 'small', max: 'medium' } }}
+                    >
+                      {question.type}
+                    </Box>
+                    <Box pad={{ horizontal: 'medium', vertical: 'none', between: 'none' }}
+                    >
+                      {question.editable ? <EditIcon colorIndex='brand' /> :
+                      <EditIcon colorIndex='unknown' />}
+                    </Box>
+                    <Box direction='row' pad={{ horizontal: 'small', vertical: 'none', between: 'small' }}
+
+                    >
+                      <LinkDownIcon colorIndex='brand' />
+                      <LinkUpIcon colorIndex='brand' />
+                    </Box>
+                    <Box pad={{ horizontal: 'medium', vertical: 'none', between: 'none' }}
+                    >
+                      <SubtractCircleIcon colorIndex='brand' />
+                    </Box>
+                  </ListItem>
+                  )}
               <Button href='#'
                 accent={false}
                 plain={false}
@@ -280,25 +270,26 @@ plain='true'
                   separator='all'
                   colorIndex='neutral-2-a'
                 >
-                  <AddIcon colorIndex='brand'/> <Label colorIndex='brand' margin='none'>Add new item</Label>
+                  <AddIcon colorIndex='brand' />
+                  <Label colorIndex='brand' margin='none'>Add new item</Label>
                 </Box>
               </Button>
             </List>
             <Menu responsive={true}
-                inline={true}
-                primary={false}
-                direction='row'
-                size='small'
-                pad={{ horizontal: 'none', between: 'small' }}
-                justify='end'
-              >
-                <Button label='Save assessment'
-                  path='/clixdash'
-                />
-                <Button label='Cancel'
-                  path='/clixdash'
-                />
-              </Menu>
+              inline={true}
+              primary={false}
+              direction='row'
+              size='small'
+              pad={{ horizontal: 'none', between: 'small' }}
+              justify='end'
+            >
+              <Button label='Save assessment'
+                path='/clixdash'
+              />
+              <Button label='Cancel'
+                path='/clixdash'
+              />
+            </Menu>
           </Box>
         </Section>
         <Footer direction='row'
@@ -310,7 +301,6 @@ plain='true'
           float={true}
           fixed={true}
         >
-
           <Anchor icon={<HomeIcon />}
             label='Home'
             animateIcon={true}
@@ -331,4 +321,4 @@ plain='true'
   }
 }
 
-export default ClixAssess;
+export default ClixEditAssess;

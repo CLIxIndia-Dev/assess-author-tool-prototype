@@ -72,12 +72,8 @@ const ASSESSMENTS = [
   },
 ];
 
-class ClixDash extends Component {
-
-
+class ClixEnglish extends Component {
   render() {
-
-
     return (
       <Article primary={true} alignContent='between'>
         <Header direction='row'
@@ -87,7 +83,7 @@ class ClixDash extends Component {
           pad={{ horizontal: 'medium', vertical: 'small', between: 'small' }}
           colorIndex='brand'
           >
-          <Logo/>
+          <Logo />
           <Heading tag='h2' strong={true} margin='none'>
             [CLIx logo]
           </Heading>
@@ -96,108 +92,106 @@ class ClixDash extends Component {
           tag='main'
           primary={true}
         >
-        <Box direction='row'
-          justify='between'
-          align='center'
-          alignContent='between'
-          wrap={true}
-          pad={{ horizontal: 'medium', vertical: 'none', between: 'small' }}
-          margin='none'
-          colorIndex='light-1'
-          >
-          <Heading tag='h3' strong={true} margin='none'>
-            English Assessments
-          </Heading>
-          <Menu responsive={true}
-            icon={<MenuIcon />}
-            label='Actions'
-            inline={true}
-            primary={false}
-            direction='row'
-            size='small'
-            separator='vertical'
-            >
-            <Button label='Preview'
-              icon={<ViewIcon />}
-              plain='true'
-              onClick={() => alert('Preview screen')} />
-            <Button label='Edit'
-              icon={<EditIcon />}
-              plain='true'
-              path='/clixeditassess'
-            />
-            <Button label='Embed code'
-              icon={<CodeIcon />}
-              plain='true'
-              onClick={() => alert('Embed code generated')} />
-            <Button label='Publish'
-              icon={<DeployIcon />}
-              plain='true'
-              onClick={() => alert('Publish')} />
-            <Button label='Delete'
-              icon={<TrashIcon />}
-              plain='true'
-              onClick={() => alert('Delete confirmation modal')} />
-          </Menu>
-          <Button label='New assessment'
-              icon={<AddIcon />}
-              path='/clixnewassess'
-              primary='true'
-          />
-        </Box>
-        <Box direction='column'
-          justify='between'
-          align='stretch'
-          wrap={true}
-          pad={{ horizontal: 'medium', vertical: 'medium', between: 'small' }}
-          margin='none'
-          colorIndex='light-2'
-          >
-          <Heading tag='h4' margin='none'>
-            Embed code
-            <Box wrap={true}
+          <Box direction='row'
+            justify='between'
+            align='center'
+            alignContent='between'
+            wrap={true}
             pad={{ horizontal: 'medium', vertical: 'none', between: 'small' }}
             margin='none'
             colorIndex='light-1'
             >
-              <Paragraph >
-              Embed code here
-              </Paragraph>
-            </Box>
-          </Heading>
-
+            <Heading tag='h3' strong={true} margin='none'>
+              English Assessments
+            </Heading>
+            <Menu responsive={true}
+              icon={<MenuIcon />}
+              label='Actions'
+              inline={true}
+              primary={false}
+              direction='row'
+              size='small'
+              separator='vertical'
+              >
+              <Button label='Preview'
+                icon={<ViewIcon />}
+                plain={true}
+                onClick={() => alert('Preview screen')} />
+              <Button label='Edit'
+                icon={<EditIcon />}
+                plain={true}
+                path='/clixeditassess'
+              />
+              <Button label='Embed code'
+                icon={<CodeIcon />}
+                plain={true}
+                onClick={() => alert('Embed code generated')} />
+              <Button label='Publish'
+                icon={<DeployIcon />}
+                plain={true}
+                onClick={() => alert('Publish')} />
+              <Button label='Delete'
+                icon={<TrashIcon />}
+                plain={true}
+                onClick={() => alert('Delete confirmation modal')} />
+            </Menu>
+            <Button label='New assessment'
+              icon={<AddIcon />}
+              path='/clixnewassess'
+              primary={true}
+            />
+          </Box>
+          <Box direction='column'
+            justify='between'
+            align='stretch'
+            wrap={true}
+            pad={{ horizontal: 'medium', vertical: 'medium', between: 'small' }}
+            margin='none'
+            colorIndex='light-2'
+            >
+            <Heading tag='h4' margin='none'>
+              Embed code
+              <Box wrap={true}
+                pad={{ horizontal: 'medium', vertical: 'none', between: 'small' }}
+                margin='none'
+                colorIndex='light-1'
+              >
+                <Paragraph >
+                Embed code here
+                </Paragraph>
+              </Box>
+            </Heading>
           </Box>
           <Box direction='row'
-          justify='between'
-          align='center'
-          alignContent='between'
-          wrap={true}
-          pad={{ horizontal: 'medium', vertical: 'none', between: 'small' }}
-          margin='none'
-          colorIndex='light-1'
-          separator='horizontal'
+            justify='between'
+            align='center'
+            alignContent='between'
+            wrap={true}
+            pad={{ horizontal: 'medium', vertical: 'none', between: 'small' }}
+            margin='none'
+            colorIndex='light-1'
+            separator='horizontal'
           >
             <Table selectable={true}>
-                  <TableHeader labels={['Name', 'Published']}
-                    sortIndex={0}
-                    sortAscending={true}
-                     />
-                  <tbody>
-                  { ASSESSMENTS.map((assessment) =>
-                    <TableRow key={assessment.id} >
-                      <td>
-                        {assessment.name}
-                      </td>
-                      <td>
-                        {assessment.publabel}
-                      </td>
-                    </TableRow>
-                  )}
-                </tbody>
-              </Table>
-            </Box>
-
-          </Section>
+              <TableHeader labels={['Name', 'Published']}
+                sortIndex={0}
+                sortAscending={true}
+                 />
+              <tbody>
+                { ASSESSMENTS.map(assessment =>
+                  <TableRow key={assessment.id} >
+                    <td>
+                      {assessment.name}
+                    </td>
+                    <td>
+                      {assessment.publabel}
+                    </td>
+                  </TableRow>
+                )}
+              </tbody>
+            </Table>
+          </Box>
+        </Section>
         <Footer direction='row'
           justify='start'
           size='medium'
@@ -226,4 +220,4 @@ class ClixDash extends Component {
   }
 }
 
-export default ClixDash;
+export default ClixEnglish;
