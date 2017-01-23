@@ -23,17 +23,17 @@ class Main extends Component {
       nav: { active: navActive, enabled: navEnabled, responsive }
     } = this.props;
     const includeNav = (navActive && navEnabled);
-    let nav;
-    if (includeNav) {
-      nav = <NavSidebar />;
-    }
+    // let nav;
+    // if (includeNav) {
+    //   nav = <NavSidebar />;
+    // }
     const priority = (includeNav && responsive === 'single' ? 'left' : 'right');
 
     return (
       <App centered={false}>
         <Split priority={priority} flex='right'
           onResponsive={this._onResponsive}>
-          {nav}
+          {''}
           {this.props.children}
         </Split>
       </App>
@@ -44,11 +44,11 @@ class Main extends Component {
 Main.propTypes = {
   children: PropTypes.any.isRequired,
   dispatch: PropTypes.func.isRequired,
-  nav: PropTypes.shape({
-    active: PropTypes.bool,
-    enabled: PropTypes.bool,
-    responsive: PropTypes.string
-  })
+  // nav: PropTypes.shape({
+  //   active: PropTypes.bool,
+  //   enabled: PropTypes.bool,
+  //   responsive: PropTypes.string
+  // })
 };
 
 const select = state => ({

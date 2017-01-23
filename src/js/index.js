@@ -6,11 +6,29 @@ import ReactDOM from 'react-dom';
 
 import '../scss/index.scss';
 
+import { AppContainer } from 'react-hot-loader';
 import App from './App';
 
 promisePolyfill();
 
 const element = document.getElementById('content');
-ReactDOM.render(<App />, element);
+ReactDOM.render(
+  <AppContainer>
+    <App />
+  </AppContainer>
+, element);
 
 document.body.classList.remove('loading');
+
+// Hot Module Replacement API
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    const NextApp = require('./App').default;
+    ReactDOM.render(
+      <AppContainer>
+        <NextApp />
+      </AppContainer>,
+      element
+    );
+  });
+}

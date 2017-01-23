@@ -34,6 +34,7 @@ class Dashboard extends Component {
     this.props.dispatch(unloadDashboard());
   }
 
+
   render() {
     const { error, tasks } = this.props;
     const { intl } = this.context;

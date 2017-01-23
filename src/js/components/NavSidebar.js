@@ -37,7 +37,7 @@ class NavSidebar extends Component {
         <Header size='large' justify='between' pad={{ horizontal: 'medium' }}>
           <Title onClick={this._onClose} a11yTitle='Close Menu'>
             <Logo />
-            <span>Assess Author Tool Prototype</span>
+            <span>Grommet Clix Test</span>
           </Title>
           <Button icon={<CloseIcon />} onClick={this._onClose} plain={true}
             a11yTitle='Close Menu' />
